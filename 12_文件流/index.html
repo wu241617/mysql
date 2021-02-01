@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        @media (max-width:450px) {
+            main {
+                width: auto;
+                height: auto;
+                padding: 0;
+                margin: 0;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h3>Node.js Stream 流</h3>
+            <ul>
+                <li>Stream 是一个抽象接口，Node中有很多对象实现了这个接口，例如，对http服务器发起请求的request对象就是一个Stream，还有stdout(标准输出)</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Node.js Stream 四种流类型</h3>
+            <ul>
+                <li>Readable 可读操作</li>
+                <li>Writable 可写操作</li>
+                <li>Duplex 可读可写操作</li>
+                <li>Transform 操作被写数据，然后读出结果</li>
+            </ul>
+        </section>
+        <section>
+            <h3>所有的 Stream 对象都是 EventEmitter 的实例，常见事件：</h3>
+            <ul>
+                <li>data 有数据可读时触发</li>
+                <li>end 没有更多数据可读时触发</li>
+                <li>error 在接收和写入错误时触发</li>
+                <li>finish 所有数据已被写入到底层系统时触发</li>
+            </ul>
+        </section>
+        <section>
+            <h3>常用操作流程</h3>
+            <ul>
+                <li>读入流</li>
+                <li>写入流</li>
+                <li>管道流：管道提供了一个输出流到输入流的机制，通常我们用于从一个流中获取数据并将数据传递到另一个流中。</li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>

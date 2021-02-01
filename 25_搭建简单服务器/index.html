@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span>username:</span><input type="text" id="name">
+        <span>password:</span><input type="password" id="paw">
+        <button>登录</button>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script>
+        $(function(){
+           $('button').on('click',function(){
+               var data = {
+                   username: $('#name').val(),
+                   password:  $('#paw').val()
+               }
+               axios.post('http://127.0.0.1:3000/',data).then(function(res){
+                   console.log('res信息为',res)
+               })
+           })
+        })
+    </script>
+</body>
+</html>
