@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,view-fit=cover,user-scalable=no">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        @media (max-width:450px) {
+            main{
+                width:auto;
+                height:auto;
+                padding:0;
+                margin:0;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section>
+            <h3>mysql 条件精准查询</h3>
+            <ul>
+                <li>使用where 子句对表中的数据筛选，结果为ture的行会出现在结果集中</li>
+                <li>select * from 表名 where 条件;（单个条件）
+                    <p>SELECT * from book where viewcount > 1000;</p>
+                </li>
+                <li>select * from 表名 where 条件 and 条件l;（组合条件）
+                    <p>SELECT * from book where viewcount > 1000 and viewcount < 1100;</p>
+                </li>
+                <li>select * from 表名 where  between 条件 and 条件1;（组合条件）
+                    <p>SELECT * from book where viewcount BETWEEN 3000 AND 4000;</p>
+                </li>
+                <li>
+                    <p>select * from studetnew where name in ('wuhao','localhost')</p>
+                    <p>select * from studetnew where name='wuhao' or name='localhost'</p>
+                </li>
+                <li>判断为空 select * from studetnew where name is NULL</li>
+                <li>mysql注释为 -- 空格 （两杠加一个空格）</li>
+            </ul>
+        </section>
+        <section>
+            <h3>比较运算符</h3>
+            <ul>
+                <li>等于 = </li>
+                <li>大于 > </li>
+                <li>大于等于 >= </li>
+                <li>小于 < </li>
+                <li>小于等于 <= </li>
+                <li>不等于 != 或 <> </li>
+            </ul>
+        </section>
+        <section>
+            <h3>逻辑运算符</h3>
+            <ul>
+                <li>and</li>
+                <li>or</li>
+                <li>not</li>
+            </ul>
+        </section>
+        <section>
+            <h3>模糊查询</h3>
+            <ul>
+                <li>like</li>
+                <li>%表示多个任意字符</li>
+                <li>_表示一个任意字符</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
