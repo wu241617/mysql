@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,viewport-fit=cover,user-scalable=no">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        @media (max-width:450px){
+            main{
+                width:atuo;
+                height:auto;
+                padding:0;
+                margin:0;
+            }
+        }
+    </style>
+    <title>范式与关系</title>
+</head>
+<body>
+    <main>
+        <h3>范式：数据库的规范，帮助我们更好的建表（高效简洁）</h3>
+        <section>
+            <h3>第一范式(1NF)</h3>
+            <ul>
+                <li>表中的列含有原子性（不可再分）的值</li>
+            </ul>
+        </section>
+        <section>   
+            <h3>第二范式(2NF)</h3>
+            <ul>
+                <li>要同时满足，第一范式和没有部分依赖（分表，去除依赖）</li>
+            </ul>
+        </section>
+        <section>
+            <h3>第三范式(3NF)</h3>
+            <ul>
+                <li>要同时满足，第二范式和没有传递依赖</li>
+            </ul>
+        </section>
+        <h3>标准：一张表只做一件事，只有一个关系</h3>
+    </main>
+</body>
+</html>

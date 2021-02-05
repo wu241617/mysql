@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span>username</span>
+        <input type="text" id="name">
+        <span>password</span>
+        <input type="password" id="pwd">
+        <button class="login">登录</button>
+        <button class='cancal'>取消</button>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script>
+        $(function(){
+            $('.login').on('click',()=>{
+                let name = $('#name').val()
+                let pwd = $('#pwd').val()
+                axios.post('http://127.0.0.1/login',{
+                    name:name,
+                    pwd:pwd
+                }).then((res) => {
+                    alert(res.data)
+                })
+            })
+        })
+    </script>
+</body>
+</html>

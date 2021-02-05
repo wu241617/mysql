@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自关联查询和子查询</title>
+</head>
+<body>
+    <main>
+        <section>
+            <h3></h3>
+            <ul>
+                <li>
+                    <p>三表连接</p>
+                    <pre>
+                        select * from score
+                        inner join student on student.id = score.stuid
+                        inner join project on project.id = score.projectid 
+                        where project.project='语文'
+                    </pre>
+                    <pre>
+                        select score.id,student.studentname,score.score  from score
+                        inner join student on student.id = score.stuid
+                        inner join project on project.id = score.projectid 
+                        where project.project='语文'
+                    </pre>
+                    <p>省--市--区（自关联查询）</p>
+                    <pre>
+                        select * from region as r1 
+                        inner join regoin as r2 on re.id = r2.pid
+                        where r1.name = '广东省'
+                    </pre>
+                    <p>子查询</p>
+                    <pre>
+                        select * from score
+                        inner join student on score.stuid = student.id 
+                        where student.studentname in (select student.name from student where student.age < 20)
+                    </pre>
+                    <p>条件查询</p>
+                    <pre>
+                        select * from teacher
+                        where exists (select studentname from student where studentage > 50)
+                    </pre>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
