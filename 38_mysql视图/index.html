@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalalbe=no,viewport-fit=cover">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        @media (max-width:450px) {
+            main{
+                margin:0;
+                padding:0;
+                width:auto;
+                height:auto;
+            }
+        }
+    </style>
+    <title>mysql视图</title>
+</head>
+<body>
+    <main>
+        <section>
+            <h3>mysql视图</h3>
+            <ul>
+                <li>对于复杂的查询，在多次使用后，维护是一件非常麻烦的事情</li>
+                <li>解决：定义视图</li>
+                <li>视图本质是对查询的一个封装</li>
+                <li>定义视图</li>
+            </ul>
+        </section>
+        <section>
+            <h3>定义视图</h3>
+            <ul>
+                <li>create view 新建表名称 as</li>
+            </ul>
+            <pre>
+                create view stuscore as
+                select students.*,scores.score from scores
+                inner join students on scores.stuid=student.id
+            </pre>
+        </section>
+        <section>
+            <h3>视图的用途</h3>
+            <ul>
+                <li>视图的用途就是查询,查询视图用途等同于查询表</li>
+                <pre>
+                    select * from stuscore
+                </pre>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

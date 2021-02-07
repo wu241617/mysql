@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,viewport-fit=cover,user-scalable=no">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        @media (max-width:450px) {
+            main{
+                width:auto;
+                height:auto;
+                padding:0;
+                padding:0;
+            }
+        }
+    </style>
+    <title>mysql 事务</title>
+</head>
+<body>
+    <main>
+        <section>
+            <h3>mysql事务</h3>
+            <ul>
+                <li>当一个业务逻辑需要多个sql完成时，如果其中某条sql语句出错，则希望整个操作都回退</li>
+                <li>使用事务可以完成退回的功能，保证业务逻辑的正确性</li>
+            </ul>
+        </section>
+        <section>
+            <h3>事务的四大特性（简称ACID）</h3>
+            <ul>
+                <li>原子性：事务中的全部操作在数据库中是不可分割的，要么全部完成，要么均不执行</li>
+                <li>一致性：几个并行执行的事务，其执行结果必须与按某一顺序串行执行的结果一致</li>
+                <li>隔离性：事务的执行不受其他事务的干扰，事务执行的中间结果对其他事务必须是透明的</li>
+                <li>持久性：对于任意已提交事务，系统必须保证该事务对数据库改变不丢失，即使数据库出现故障</li>
+            </ul>
+        </section>
+        <section>
+            <h3>使用要求</h3>
+            <ul>
+                <li>要求：表的类型必须是innodb或bdb类型，才可以对此表使用事务</li>
+            </ul>
+        </section>
+        <section>
+            <h3>常见使用</h3>
+            <ul>
+                <li>查看表的创建语句
+                    <pre>show create table students</pre>
+                </li>
+                <li>修改表的类型
+                    <pre>alter table '表名' engine=innodb</pre>
+                </li>
+                <li>事务语句
+                    <pre>
+                        开启 begin;
+                        提交 commit;
+                        回滚 rollback;
+                    </pre>
+                </li>
+            </ul>
+        </section>
+    </main>
+    
+</body>
+</html>

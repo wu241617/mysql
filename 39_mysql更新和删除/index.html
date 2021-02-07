@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,viewport-fit=cover,user-scalable=no">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        @media (max-width:450px){
+            main{
+                width:auto;
+                height:auto;
+                padding:0;
+                margin:0;
+            }
+        }
+    </style>
+    <title>MYSQL更新和删除</title>
+</head>
+<body>
+   <main>
+       <section>
+           <h3>MYSQL UPDATE 更新，如果我们需要修改或更新MYSQL中的数据，我们可以使用SQL UPDATE 命令来操作</h3>
+           <ul>
+               <li>语法：
+                   <pre>
+                       UPDATE table_name SET field1=new-value1,field2=new-value2 [WHERE Clause]
+                   </pre>
+               </li>
+               <li>可以同时更新一个或者多个字段</li>
+               <li>可以在WHERE子句中指定任意条件</li>
+               <li>可以在一个单独表中同时更新数据</li>
+           </ul>
+       </section>
+       <section>
+           <h3>删除一般分为逻辑删除和物理删除</h3>
+           <ul>
+               <li>物理删除，直接删除，找不到</li>
+               <li>逻辑删除，逻辑上删除，设置字段登录不了，信息还在（实质为更新操作）</li>
+           </ul>
+       </section>
+       <section>
+           <h3>MYSQL DELETE 语句</h3>
+           <p>你可以使用SQL的DELETE FROM命令来删除MYSQL数据库表中的记录</p>
+           <ul>
+               <li>语法：
+                   <pre>DELETE FROM table_name [WHERE Clause]</pre>
+               </li>
+               <li>如果没有指定的WHERE子句，MYSQL表中的所有记录将被删除
+                <pre>DELETE FROM table_name</pre>
+               </li>
+           </ul>
+       </section>
+   </main> 
+</body>
+</html>
