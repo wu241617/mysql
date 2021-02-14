@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+    <title>express 路由</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h3>express路由简介</h3>
+            <ul>
+                <li>路由表示应用程序端点（URL）的定义以及响应客户端请求的方式，它包含一个请求方式（methods），路径（path）和路由匹配的函数（callback）</li>
+                <li>语法：app.methods(path,callback)</li>
+            </ul>
+        </section>
+        <section>
+            <h3>express路由方法</h3>
+            <ul>
+                <li>express路由方法源于http方法之一，附加到express类的实例，它可请求的方法包括</li>
+                <li>get,post,put,head,delete,postions,trace,copy,lock,mkcol,move,purge,propfind,proppatch,unlock,report,mkactivity,checkout,merge,m-search,notify,subscribe,unsubscribe,patch,search,connect</li>
+            </ul>
+        </section>
+        <section>
+            <h3>路径</h3>
+            <ul>
+                <li>字符串路径</li>
+                <li>
+                    <pre>
+                        // 此地址将与/login匹配
+                        app.get('/login',(req,res)=>{
+                            res.send('hello world')
+                        })
+                    </pre>
+                </li>
+                <li>字符串模式路径</li>
+                <li>
+                    <pre>
+                        // 此路由路径将与acd 或者 abcd匹配
+                        app.get('/ab?cd',(req,res)=>{
+                            res.send('hello world')
+                        })
+                    </pre>
+                </li>
+                <li>正则表达式路由</li>
+                <li>
+                    <pre>
+                        // 匹配 a后面至少10个数字 路径
+                        app.get(/\/a\d{10}/, (req, res) => {
+                            res.send('这是 newPage 页面')
+                        })
+                        
+                    </pre>
+                </li>
+                <li>动态路由</li>
+                <li>
+                    <pre>
+                        app.get('/user/:userId/books/:bookId',(req,res,next)=>{
+                            res.send(req.params)
+                            // 调用下一个函数
+                            next()
+                        },
+                        (req,res)=>{
+                            res.json(Array.from(data))
+                        })
+                    </pre>
+                    <pre>
+                        Route path: /user/:userId/books/:bookId
+                        Request URL: http://localhost:3000/user/34/books/8989
+                        req.params: {'userId':'34','bookId':'8989'}
+                    </pre>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>
