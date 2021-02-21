@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,minimum-scale=1.0,maximum-scale=1.0,viewport-fit=cover">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <p>
+            <span>username:</span>
+            <input type="text" id="name">
+        </p>
+        <p>
+            <span>password:</span>
+            <input type="text" id="password">
+        </p>
+        <p>
+            <button id="login">登录</button>
+            <button id="cancel">取消</button>
+        </p>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        $(function() {
+            $('#login').on('click', function() {
+                let name = $('#name').val()
+                let pwd = $('#password').val()
+                let httpUrl = `http://127.0.0.1:3000/login?name=${name}&pwd=${pwd}`
+                $.get(httpUrl).then(function(res) {
+                    console.log(res)
+                })
+            })
+            $('#cancel').on('click', function() {
+                $('#name').val('')
+                $('#password').val('')
+            })
+        })
+    </script>
+</body>
+
+</html>
