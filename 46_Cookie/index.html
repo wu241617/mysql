@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+    <title>Cookie</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        main{
+            width:auto;
+            padding:auto;
+            margin:0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h3>关于 Cookie</h3>
+            <ul>
+                <li>在我们关闭一个登录过的网址并重新打开它后，我们的登录信息依然没有丢失；
+                    当我们浏览了商品后历史记录里出现了我们点击过的商品，推荐商品也为我们
+                选出了相似商品；浏览器会将我们的操作信息保存在cookie中，它是存储在本地
+            终端上的数据</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Cookie的特点</h3>
+            <ul>
+                <li>cookie保存在浏览器本地，只要不过期关闭浏览器也会存在</li>
+                <li>正常情况下 cookie 不加密，用户可以轻松看到</li>
+                <li>cookie 可以被篡改</li>
+                <li>cookie 可用于攻击</li>
+                <li>cookie 储存量很少，一般 4K</li>
+                <li>发送请求自动带上登录信息</li>
+            </ul>
+        </section>
+        <section>
+            <h3>cookie安装和使用</h3>
+            <ul>
+                <li>安装:npm install cookie-parser --save</li>
+                <li>引入:let cookieParser = require('cookie-parser')</li>
+                <li>设置中间件:app.use(cookieParser)</li>
+                <li>路由函数中设置cookie:res.cookies(name,value,opction)</li>
+                <li>路由函数中拿到cookie:res.cookies.name</li>
+                <li>注意：基础设置cookie（不设置过期时间）,有效期为一个会话。浏览器关闭则失效</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

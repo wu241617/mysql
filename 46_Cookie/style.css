@@ -1,0 +1,44 @@
+*{
+    margin:0;
+    padding:0;
+}
+html,body{
+    width:100%;
+    height:100%;
+}
+html{
+    font-size:20px;
+}
+main,section{
+    display:block;
+}
+main{
+   width:30rem;
+   height:auto;
+   box-shadow:0 0 0.5rem 0.5rem #666;
+   border-radius:1rem;
+   margin:2rem auto 0;
+   padding:1rem;
+   font-size:0.7rem;
+   font-family:微软雅黑; 
+}
+h3{
+    width:100%;
+    height:2rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:black;
+    color:white;
+    margin:0.5rem 0;
+}
+ul{
+    list-style-position:inside;
+    padding:1rem;
+}
+ul>li{
+    margin:0.5rem 0;
+    overflow:hidden;
+    text-overflow:hidden;
+    white-space:nowrap ;
+}
